@@ -5,8 +5,10 @@
     "node": true
   },
   "extends": [
+    "airbnb",
     "plugin:react/recommended",
-    "airbnb"
+    "plugin:import/react",
+    "plugin:import/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -25,6 +27,15 @@
     "@typescript-eslint",
     "import"
   ],
+  "settings": {
+    "import/resolver": {
+      "node": {},
+      "webpack": {}
+    },
+    "import/extensions": [
+      ".js", ".jsx", ".ts", ".tsx"
+    ]
+  },
   "rules": {
     "linebreak-style": "off",
     "no-unused-vars": "warn",
@@ -43,10 +54,28 @@
         ]
       }
     ],
-    "sort-imports": 2,
+    "react/prop-types": "off",
+    "sort-imports": "off",
     "import/prefer-default-export": 0,
     "import/no-default-export": 2,
     "import/no-named-default": 0,
-    "react/jsx-no-bind": 0
+    "eqeqeq": "off",
+    "max-len": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".tsx"
+        ]
+      }
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off",
+    "import/extensions": ["error", "ignorePackages", {
+      "js": "never",
+      "jsx": "never",
+      "ts": "never",
+      "tsx": "never"
+    }]
   }
 }
